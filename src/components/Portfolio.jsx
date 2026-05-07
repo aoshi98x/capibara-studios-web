@@ -52,31 +52,24 @@ export const Portfolio = () => {
             const style = bentoStyles[index] || bentoStyles[0];
 
             return (
-              <motion.div
+               <motion.div
                 key={project.id}
                 whileHover={{ scale: 0.98 }}
                 className={`${style.size} relative group rounded-[2.5rem] overflow-hidden border border-white/5 bg-zinc-900`}
               >
-                {/* Link al detalle dinámico */}
-                <Link to={`/project/${project.slug}`} className="absolute inset-0 z-30">
-                  <span className="sr-only">Ver {project.title}</span>
-                </Link>
-
-                {/* IMAGEN: Usa img_url de BD o el Placeholder por defecto */}
+                {/* 1. IMAGEN DE FONDO */}
                 <img 
                   src={project.img_url || fallbackImage} 
                   className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-70 group-hover:scale-110 transition-all duration-700 ease-out" 
                   alt={project.title}
                 />
                 
-                {/* Overlay sutil de color de marca */}
-                <div className={`absolute inset-0 opacity-20 group-hover:opacity-10 transition-opacity ${style.color} z-10`} />
-                
-                {/* Gradiente inferior para legibilidad */}
-                <div className="absolute inset-0 bg-gradient-to-t from-capibara-black via-capibara-black/20 to-transparent z-20" />
+                {/* 2. CAPAS DE ESTILO (Overlay y Gradiente) */}
+                <div className={`absolute inset-0 opacity-20 group-hover:opacity-10 transition-opacity ${style.color} z-10 pointer-events-none`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-capibara-black via-capibara-black/20 to-transparent z-20 pointer-events-none" />
 
-                {/* Textos de la Card */}
-                <div className="absolute inset-0 p-10 flex flex-col justify-end z-30">
+                {/* 3. TEXTOS (Añadimos pointer-events-none para que no bloqueen el click) */}
+                <div className="absolute inset-0 p-10 flex flex-col justify-end z-30 pointer-events-none">
                   <span className="text-capibara-cyan text-[10px] font-black uppercase tracking-[0.2em] mb-2 drop-shadow-md">
                     {project.tags && project.tags.length > 0 ? project.tags[0] : "Capibara Original"}
                   </span>
@@ -84,6 +77,11 @@ export const Portfolio = () => {
                     {project.title}
                   </h3>
                 </div>
+
+                {/* 4. EL ENLACE (Al final de todo con z-50 para cubrir la tarjeta completa) */}
+                <Link to={`/project/${project.slug}`} className="absolute inset-0 z-50 cursor-pointer">
+                  <span className="sr-only">Ver {project.title}</span>
+                </Link>
               </motion.div>
             );
           })}

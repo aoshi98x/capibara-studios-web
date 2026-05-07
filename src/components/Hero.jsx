@@ -35,12 +35,13 @@ const Hero = () => {
 
         {/* Botón de Acción con Estilo Gaming */}
         <motion.button
+          onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
           whileHover={{ 
             scale: 1.05, 
             boxShadow: "0px 0px 20px rgba(255, 0, 110, 0.7)" 
           }}
           whileTap={{ scale: 0.95 }}
-          className="mt-12 px-10 py-4 bg-capibara-magenta text-capibara-white font-bold rounded-full transition-colors"
+          className="mt-12 px-10 py-4 bg-capibara-magenta text-capibara-white font-bold rounded-full transition-colors cursor-pointer"
         >
           CREEMOS ALGO JUNTOS
         </motion.button>
