@@ -29,7 +29,7 @@ const Hero = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
         >
           <p className="mt-4 text-lg md:text-2xl text-capibara-cyan font-semibold tracking-[0.3em] uppercase">
-            Play Together
+            Let's Play Together
           </p>
         </motion.div>
 

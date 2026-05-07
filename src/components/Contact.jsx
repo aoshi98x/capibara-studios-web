@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Mail, Send } from 'lucide-react';
 
 export const Contact = () => (
-  <section className="py-24 px-6 bg-zinc-950 relative overflow-hidden">
+  <section id="contact" className="py-24 px-6 bg-zinc-950 relative overflow-hidden">
     {/* Decoración de fondo sutil */}
     <div className="absolute top-0 right-0 w-96 h-96 bg-capibara-magenta/5 blur-[120px] rounded-full" />
     
@@ -71,9 +71,9 @@ export const Contact = () => (
       </form>
 
       <div className="mt-12 flex justify-center gap-8 text-gray-500">
-        <a href="#" className="hover:text-capibara-cyan transition-colors">Instagram</a>
-        <a href="#" className="hover:text-capibara-magenta transition-colors">LinkedIn</a>
-        <a href="#" className="hover:text-capibara-yellow transition-colors">X (Twitter)</a>
+        {/* <a href="#" className="hover:text-capibara-cyan transition-colors">Instagram</a> */}
+        <a href="https://www.linkedin.com/company/capibara-studios/" className="hover:text-capibara-magenta transition-colors">LinkedIn</a>
+        {/* <a href="#" className="hover:text-capibara-yellow transition-colors">X (Twitter)</a> */}
       </div>
     </div>
   </section>

@@ -13,3 +13,61 @@
 @utility text-glow-yellow {
   text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
 }
+
+/* --- FIX EXTREMO PARA GOOGLE TRANSLATE --- */
+
+/* 1. Ocultar la barra superior (Iframe) de forma agresiva */
+iframe.goog-te-banner-frame,
+.goog-te-banner-frame {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Forzar a HTML y BODY a no moverse cuando Google inyecta estilos en línea */
+html, body {
+  position: static !important;
+  top: 0px !important;
+  margin-top: 0px !important;
+}
+
+/* 2. Ocultar el texto de "Con la tecnología de Google" y el logo */
+.goog-logo-link {
+  display: none !important;
+}
+.goog-te-gadget {
+  color: transparent !important;
+  font-size: 0px !important;
+}
+/* A veces Google envuelve el logo en un span, esto lo elimina */
+.goog-te-gadget span {
+  display: none !important;
+}
+
+/* Extra: Ocultar el feo tooltip flotante original al pasar el ratón por el texto traducido */
+#goog-gt-tt, 
+.goog-te-balloon-frame {
+  display: none !important;
+}
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* 3. Estilar el menú desplegable (Select) para el modo oscuro */
+.goog-te-combo {
+  background-color: #09090b !important; /* Color zinc-950 de tu paleta */
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  padding: 4px 8px !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  outline: none !important;
+  transition: all 0.3s ease;
+}
+
+.goog-te-combo:hover {
+  border-color: #00B4D8 !important; /* Hover con color Cian */
+}

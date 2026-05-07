@@ -2,7 +2,7 @@
 import { Gamepad2, Users, Rocket } from 'lucide-react';
 
 export const AboutServices = () => (
-    <section className="py-24 bg-zinc-950">
+    <section id="services" className="py-24 bg-zinc-950">
         <div className="max-w-7xl mx-auto px-6 text-center">
             <h2 className="text-3xl md:text-5xl text-white mb-16">EXPERIENCIAS QUE CONECTAN</h2>
             <div className="grid md:grid-cols-3 gap-8">
