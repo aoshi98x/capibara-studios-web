@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-capibara-black: #000000;
+  --color-capibara-yellow: #FFD700;
+  --color-capibara-magenta: #FF006E;
+  --color-capibara-cyan: #00B4D8;
+  --color-capibara-white: #FFFFFF;
+  --font-sans: "Poppins", sans-serif;
+}
+
+/* Utilidad para el resplandor del texto inspirado en el logo */
+@utility text-glow-yellow {
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
